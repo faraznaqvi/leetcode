@@ -1,0 +1,11 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        if x > 0 or x <= pow(2,31)-1:
+            square = 1
+            difference = x
+            i = 0
+            while difference > -1:
+                i+=1
+                square  = i*i
+                difference  = x - square
+            return(i-1)
