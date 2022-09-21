@@ -1,0 +1,14 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
+        if len(nums) > 5*pow(10,4) or len(nums) < 1:
+            return ''
+        if  all(i > pow(10,9) for i in nums):
+            return ''
+        if all(i < pow(-10,9) for i in nums):
+            return ''
+        unique = set(nums)
+        largest = zip(
+                [nums.count(i) for i in unique],
+                unique
+            )        
+        return([i[1] for i in largest if i[0] > len(nums)/3])
