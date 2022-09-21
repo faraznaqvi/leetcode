@@ -1,0 +1,20 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        front = ['(','{','[']
+        end = [')','}',']']
+        if len(s) <= 1 or len(s) >= pow(10,4):
+            return False
+       
+        for i in s:
+            if i in front:
+                stack.append(i)
+            if i in end:
+                if len(stack) == 0:
+                    return False
+                if front.index(stack[-1]) != end.index(i):
+                    return False
+                else:
+                    stack.pop()
+        if len(stack)==0:
+            return True
