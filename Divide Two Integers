@@ -1,0 +1,10 @@
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        if divisor == 0:
+            return
+        if (dividend/divisor) >= pow(2,31)-1:
+            return pow(2,31)-1
+        if (dividend/divisor) < pow(-2,31):
+            return pow(-2,31)
+        return int((dividend/divisor))
+        
