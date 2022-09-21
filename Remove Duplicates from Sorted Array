@@ -1,0 +1,10 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        prev = ''
+        for val in list(nums):
+            if val == prev and prev != '':
+                nums.remove(val)
+            else:
+                prev = val
+        print(len(nums))
+        return len(nums)
