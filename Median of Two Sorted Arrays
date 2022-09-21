@@ -1,0 +1,11 @@
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        median = 0
+        combined = nums1+nums2
+        combined.sort()
+        print(combined)
+        if len(combined)%2 == 1:
+            median = combined[int((len(combined)+1)/2)-1]
+        else:
+            median = ((combined[int((len(combined)-1)/2)]+combined[int((len(combined)+1)/2)])/2)
+        return median
