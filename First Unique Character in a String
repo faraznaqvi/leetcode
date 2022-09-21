@@ -1,0 +1,12 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+            queue = []
+            htable = list({e for e in set(s) if s.count(e) <2})
+            # print(htable)
+            for i in range(len(s)):
+                if s[i] in htable:
+                    queue.append(i)
+            if len(queue) > 0:
+                return queue[0]
+            else:
+                return -1
