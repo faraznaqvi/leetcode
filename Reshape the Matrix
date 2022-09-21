@@ -1,0 +1,14 @@
+import numpy as np
+
+class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        if len(mat) == r and len(mat[0])*len(mat) == c:
+            return mat
+        else:
+            try:
+                x = np.array(mat).reshape(r,c) 
+                print(x)
+                return x
+            except:
+                return mat
+        
